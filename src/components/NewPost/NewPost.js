@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { createPost } from '../../actions';
+import checkUserAuth from '../../checkUserAuth';
 import './NewPost.scss';
 
 class NewPost extends Component {
@@ -11,21 +12,6 @@ class NewPost extends Component {
             input: ''
          };
     }
-
-    componentDidMount() {
-        this.redirectOnNotLoggedIn();
-    }
-
-    componentDidUpdate() {
-        this.redirectOnNotLoggedIn();
-    }
-
-    redirectOnNotLoggedIn() {
-        if (!this.props.auth) {
-            this.props.history.push("/")
-        }
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createPost(this.state.input);
@@ -52,8 +38,5 @@ class NewPost extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return { auth: state.auth }
-}
 
-export default connect(mapStateToProps, { createPost })(NewPost);
+export default connect(null, { createPost })(checkUserAuth(NewPost));
