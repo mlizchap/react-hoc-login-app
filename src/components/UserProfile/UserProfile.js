@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import checkUserAuth from '../../checkUserAuth';
 
 class UserProfile extends Component {
     constructor(props) {
@@ -14,4 +15,4 @@ class UserProfile extends Component {
     }
 }
 
-export default UserProfile;
+export default checkUserAuth(UserProfile);
