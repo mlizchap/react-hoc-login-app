@@ -1,0 +1,11 @@
+.header {
+    background-color: #5df039;
+    margin: 0;
+    padding: 0;
+    color: white;
+    padding: 10px;
+    & li {
+        margin: 20px;
+        display: inline;
+    }
+}
