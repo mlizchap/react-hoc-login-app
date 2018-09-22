@@ -1,4 +1,3 @@
-//import { createPost } from '../actions';
 import { CREATE_POST } from '../actions';
 
 const testPosts = [{ text: 'this is post 1', id: 1}, { text: 'this is another post', id: 2}]
