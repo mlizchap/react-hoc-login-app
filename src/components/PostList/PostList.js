@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Post from '../Post/Post';
+import { map } from 'when';
 
 class PostList extends Component {
     constructor(props) {
@@ -8,14 +11,21 @@ class PostList extends Component {
         this.state = {  };
     }
     render() {
+        {console.log(this.props.posts)}
         return (
             <div>
                 <Link to="/new">Create new post</Link>
-                <h4>list of posts:</h4>
-                <Post />
+                <h2>list of posts:</h2>
+                {this.props.posts.map(post => {
+                    return <Post key={post.id} text={post.text}/>
+                })}
             </div>
         );
     }
 }
 
-export default PostList;
+function mapStateToProps(state) {
+    return { posts: state.posts }
+}
+
+export default connect(mapStateToProps)(PostList);

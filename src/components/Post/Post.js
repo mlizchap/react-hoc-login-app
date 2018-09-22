@@ -7,7 +7,7 @@ class Post extends Component {
     }
     render() {
         return (
-          <div>a post</div>  
+          <div>{this.props.text}</div>  
         );
     }
 }
