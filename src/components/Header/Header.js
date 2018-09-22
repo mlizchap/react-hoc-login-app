@@ -15,7 +15,7 @@ class Header extends Component {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li>
-                        <button onClick={this.props.changeAuth}>{this.props.auth ? 'log in' : 'log out'}</button>
+                        <button onClick={this.props.changeAuth}>{this.props.auth ? 'log out' : 'log in'}</button>
                     </li>
                 </ul>
             </div>

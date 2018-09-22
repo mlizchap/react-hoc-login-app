@@ -12,6 +12,20 @@ class NewPost extends Component {
          };
     }
 
+    componentDidMount() {
+        this.redirectOnNotLoggedIn();
+    }
+
+    componentDidUpdate() {
+        this.redirectOnNotLoggedIn();
+    }
+
+    redirectOnNotLoggedIn() {
+        if (!this.props.auth) {
+            this.props.history.push("/")
+        }
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createPost(this.state.input);
@@ -38,4 +52,8 @@ class NewPost extends Component {
     }
 }
 
-export default connect(null, { createPost })(NewPost);
+function mapStateToProps(state) {
+    return { auth: state.auth }
+}
+
+export default connect(mapStateToProps, { createPost })(NewPost);
