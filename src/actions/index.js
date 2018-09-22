@@ -8,9 +8,8 @@ export const createPost = (input) => {
     }
 }
 
-export const isAuthenticated = (isLoggedIn) => {
+export const changeAuth = () => {
     return {
         type: CHANGE_AUTH,
-        payload: isLoggedIn
     }
 }

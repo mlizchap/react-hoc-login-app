@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import { changeAuth } from '../../actions';
 import './Header.scss';
 
 class Header extends Component {
+    handleLogin = () => {
+        this.props.changeAuth()
+    }
     render() {
         return (
             <div className="header"> 
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li>
-                        <button>Login/Logout</button>
+                        <button onClick={this.props.changeAuth}>{this.props.auth ? 'log in' : 'log out'}</button>
                     </li>
                 </ul>
             </div>
@@ -18,4 +23,8 @@ class Header extends Component {
     }
 }
 
-export default Header;
+function mapStateToProps(state) {
+    return { auth: state.auth}
+}
+
+export default connect(mapStateToProps, {changeAuth})(Header);
