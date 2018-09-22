@@ -1,7 +1,19 @@
+@import '../../index.scss';
+
 .createPost form {
-    & textarea, button  {
-        display: block;
+    width: 150px;
+    border: 2px solid $darkgreen;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    & .buttons {
+        text-align: right;
+    }
+    & button   {
         margin: 10px;
+        
+        text-align: left;
     }
     
+
 }
