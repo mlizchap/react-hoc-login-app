@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Post.scss';
 
 class Post extends Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class Post extends Component {
     }
     render() {
         return (
-          <div>{this.props.text}</div>  
+          <div className="post">{this.props.text}</div>  
         );
     }
 }

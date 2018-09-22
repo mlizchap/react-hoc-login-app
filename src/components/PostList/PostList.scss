@@ -1,0 +1,17 @@
+.postList {
+    & h2 {
+        margin: 40px 0 10px 0;
+    }
+    & a {
+        text-decoration: none;
+        background-color: rgb(10, 105, 248);
+        border-radius: 4px;
+        padding: 10px;
+        color: white;
+        &:hover {
+            background-color: rgb(118, 118, 255);
+            cursor: pointer;
+        }
+    }
+}
+

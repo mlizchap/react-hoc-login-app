@@ -14,7 +14,8 @@ class Header extends Component {
             <div className="header"> 
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/profile">Profile</Link></li>
+                    {(this.props.auth) ? <li><Link to="/profile">Profile</Link></li> : <li></li>}
+                    
                     <li>
                         <button onClick={this.props.changeAuth}>{this.props.auth ? 'log out' : 'log in'}</button>
                     </li>
